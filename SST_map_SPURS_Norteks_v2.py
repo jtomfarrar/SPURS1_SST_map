@@ -25,7 +25,7 @@ import Tom_tools_v1 as tt
 #
 
 plt.close("all")
-__figdir__ = "Figz"
+__figdir__ = "../Figz"
 savefig_args = {'bbox_inches':'tight', 'pad_inches':0}
 
 ###########################
@@ -91,7 +91,6 @@ fig = plt.figure(figsize=(8, 4))
 ds_sub.isel(time=ff2[0][1]).plot(cmap='coolwarm',levels=np.linspace(26,28,15))
 plt.plot(SPURSlon,SPURSlat,'o',color='k')
 
-
 fig= plt.figure(figsize=(8,4))
 ds_sub.isel(time=ff2[0][0]).plot(cmap='coolwarm',levels=np.linspace(26,28,15))
 plt.plot(SPURSlon,SPURSlat,'o',color='k')
@@ -150,9 +149,9 @@ plt.xlabel('Longitude ($^\circ$W)')
 plt.ylabel('Latitude ($^\circ$N)')
 
 locs, labels = plt.xticks()
-labels2 = []
+labels2 = [] # Generate an empty list
 for n in np.arange(len(locs)): 
-    labels2.append(str(-round(locs[n],3)))
+    labels2.append(str(-round(locs[n],3))) # generate list of x axis coords, w/o minus sign
 
 plt.xticks(locs,labels=labels2)
 
