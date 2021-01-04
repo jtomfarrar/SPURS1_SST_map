@@ -8,8 +8,8 @@ Initially followed Intro_06_Xarray-basics.py tutorial obtained from Chelle Gente
 
 @author: jtomf
 """
-import sys
-sys.path.append('C:/Users/jtomf/Documents/Python/Tom_tools/')
+# import sys
+# sys.path.append('C:/Users/jtomf/Documents/Python/Tom_tools/')
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -141,8 +141,8 @@ plt.axis([-38.708669354838705,  -37.26713709677419,  24.239516041550388,  25.326
 #fig = plt.figure(figsize=(8, 4))
 plt.plot(gpssub['buoy-lon'], gpssub['buoy-lat'], color='k')
 plt.plot(gpssub['gldr-lon'], gpssub['gldr-lat'], color='m')
-plt.plot(gpssub.iloc[-1]['buoy-lon'], gpssub.iloc[-1]['buoy-lat'], 'o', color='k')
-plt.plot(gpssub.iloc[-1]['gldr-lon'], gpssub.iloc[-1]['gldr-lat'], 'o', color='m')
+h1 = plt.plot(gpssub.iloc[-1]['buoy-lon'], gpssub.iloc[-1]['buoy-lat'], 'o', color='k', label='Buoy positions')
+h2 = plt.plot(gpssub.iloc[-1]['gldr-lon'], gpssub.iloc[-1]['gldr-lat'], 'o', color='m', label='Glider positions')
 plt.axis('scaled')
 plt.axis([-38.113580307811965, -37.89454310774521, 24.479272006279203, 24.70908152766072])
 plt.xlabel('Longitude ($^\circ$W)')
@@ -154,6 +154,6 @@ for n in np.arange(len(locs)):
     labels2.append(str(-round(locs[n],3))) # generate list of x axis coords, w/o minus sign
 
 plt.xticks(locs,labels=labels2)
-
+plt.legend()
 plt.savefig(__figdir__ + "/VIIRS_NPP_SST_zoom.png",**savefig_args,dpi=600)
 
