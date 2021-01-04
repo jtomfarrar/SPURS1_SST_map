@@ -107,7 +107,7 @@ fig= plt.figure(figsize=(8,4))
 ds_sub.isel(time=ff2[0][1]).plot(cmap='coolwarm',levels=np.linspace(27.15,27.9,15))
 #plt.plot(SPURSlon,SPURSlat,'o',color='k')
 plt.axis([-38.708669354838705,  -37.26713709677419,  24.239516041550388,  25.32612009257010])
-gpsdata = pd.read_csv('buoy_and_glider_lat_lon.csv')
+gpsdata = pd.read_csv('../buoy_and_glider_lat_lon.csv')
 gpsdata['date_time'] = [tt.matlab2datetime(tval) for tval in gpsdata['mday']]
 gpssub = gpsdata.loc[gpsdata['date_time'] >= '201209300000']
 gpssub = gpssub.loc[gpssub['date_time'] <= '201209300600']
