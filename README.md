@@ -4,5 +4,8 @@ Zippel, S. F., Farrar, J. T., Zappa, C. J., Miller, U., St. Laurent, L., Ijichi,
 
 The main script is SST_map_SPURS_Norteks_v2.py.
 
+The rest of the code for the paper can be found here:
+https://github.com/zippelsf/MooredTurbulenceMeasurements
+
 
 
